@@ -23,6 +23,12 @@ func InitRedis() {
 	if err != nil {
 		log.Fatalf("Failed to connect to Redis: %v", err)
 	}
-
 	fmt.Println("Connected to Redis!")
+
+	// err = Rdb.FlushDB(Ctx).Err()
+	// if err != nil {
+	// 	fmt.Println("Failed to flush Redis DB:", err)
+	// } else {
+	// 	fmt.Println("Redis DB flushed successfully")
+	// }
 }

@@ -7,8 +7,6 @@ import (
 	redisdb "redis-order/redis"
 	"time"
 
-	"github.com/redis/go-redis/v9"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -93,11 +91,7 @@ func NotifyOrderProcessed(ctx context.Context) {
 			orderKey := msg.Payload
 			orderData, err := redisdb.Rdb.HGetAll(redisdb.Ctx, orderKey).Result()
 			if err != nil {
-				if err == redis.Nil {
-					fmt.Printf("No data found for order %s\n", orderKey)
-				} else {
-					fmt.Printf("Error fetching data for order %s: %v\n", orderKey, err)
-				}
+				fmt.Printf("Error fetching data for order %s: %v\n", orderKey, err)
 				continue
 			}
 

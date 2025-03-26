@@ -18,6 +18,7 @@ func main() {
 
 	r := gin.Default()
 	r.POST("/order", handlers.AddorderHandler)
+	r.GET("/order", handlers.GetOrderDataHandler)
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()

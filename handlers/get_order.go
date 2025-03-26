@@ -37,7 +37,7 @@ func GetOrderDataHandler(c *gin.Context) {
 		}
 
 		c.JSON(http.StatusOK, gin.H{
-			"orderKey": "order-99",
+			"order_id": "order-99",
 			"product":  product,
 			"price":    price,
 		})
@@ -52,7 +52,7 @@ func GetOrderDataHandler(c *gin.Context) {
 		}
 
 		c.JSON(http.StatusOK, gin.H{
-			"orderKey": "order-99",
+			"order_id": "order-99",
 			"product":  product,
 			"price":    price,
 		})
